@@ -1,0 +1,84 @@
+---
+layout: default
+title: Scaland
+overview: true
+---
+
+<section class="intro">
+  <div class="grid">
+    <div class="unit whole center-on-mobiles">
+      <p class="first">{{ site.description }}</p>
+    </div>
+  </div>
+</section>
+<section class="features">
+  <div class="grid" style="margin-bottom:40px;">
+    <div class="unit one-third text-center">
+      <img src="/img/scaland-cli.png" width="150" heigh="150">
+      <h2>CLI</h2>
+      <p>
+        Create Scala CLI Applications with an easy to use DSL.
+      </p>
+      <a href="/docs/cli/home/">Learn more &rarr;</a>
+    </div>
+    <div class="unit one-third text-center">
+      <img src="/img/scaland-vcs.png" width="150" heigh="150">
+      <h2>VCS</h2>
+      <p>
+        Manage repositories from a different version control
+        systems with a common set of commands.
+      </p>
+      <a href="/docs/vcs/home/">Learn more &rarr;</a>
+    </div>
+    <div class="unit one-third text-center">
+      <img src="/img/scaland-io.png" width="150" heigh="150">
+      <h2>I/O</h2>
+      <p>
+        Handle local files and folders, create paths for any OS and
+        perform common operations with them.
+      </p>
+      <a href="/docs/io/home/">Learn more &rarr;</a>
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+<section class="quickstart">
+  <div class="grid">
+    <div class="unit golden-small center-on-mobiles">
+      <h4>Start using it with <em>SBT</em>.</h4>
+    </div>
+    <div class="unit golden-large code">
+      <p class="title">build.sbt</p>
+      <div class="shell">
+        <p class="line">
+          <span class="variable">resolvers</span> <span class="operator">+=</span>
+          <br>&nbsp;&nbsp;
+          <span class="string">"Alan Rodas's Repository"</span> at
+          <span class="string">"https://alanrodas.com/releases/"</span>
+        </p>
+        <p class="line"><br></p>
+        <p class="line">
+          <span class="variable">libraryDependencies</span> <span class="operator">+=</span>
+          <span class="string">"com.alanrodas.scaland"</span> %%
+          <span class="string">"scaland-cli"</span> %
+          <span class="string">"0.1"</span>
+        </p>
+        <p class="line"><br></p>
+        <p class="line">
+          <span class="variable">libraryDependencies</span> <span class="operator">+=</span>
+          <span class="string">"com.alanrodas.scaland"</span> %%
+          <span class="string">"scaland-vcs"</span> %
+          <span class="string">"0.1"</span>
+        </p>
+        <p class="line"><br></p>
+        <p class="line">
+          <span class="variable">libraryDependencies</span> <span class="operator">+=</span>
+          <span class="string">"com.alanrodas.scaland"</span> %%
+          <span class="string">"scaland-vcs-git"</span> %
+          <span class="string">"0.1"</span>
+        </p>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
