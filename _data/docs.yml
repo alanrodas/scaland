@@ -1,0 +1,28 @@
+- title: Getting Started
+  docs:
+  - home
+  - modules
+  - installation
+
+- title: CLI Module
+  docs:
+  - cli/home
+  - cli/installation
+  - cli/usage
+
+- title: VCS Module
+  docs:
+  - vcs/home
+  - vcs/installation
+  - vcs/usage
+
+- title: I/O Module
+  docs:
+  - io/home
+
+- title: Meta
+  docs:
+  - downloads
+  - roadmap
+  - contributing
+  - history

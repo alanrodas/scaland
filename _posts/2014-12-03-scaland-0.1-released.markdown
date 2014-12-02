@@ -1,0 +1,10 @@
+---
+layout: news_item
+title: 'Scaland 0.1 Released'
+date: 2014-12-03 18:49:08 -0800
+author: alanrodas
+version: 0.1
+categories: [release]
+---
+
+The first release of Scaland. See it, watch it, like it, share it.

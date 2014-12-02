@@ -1,0 +1,18 @@
+markdown: kramdown
+highlighter: pygments
+relative_permalinks: false
+permalink: /news/:year/:month/:day/:title/
+excerpt_separator: ""
+
+
+title: Scaland - Easier Scala code
+description: Ease your Scala code with Scaland's libraries.
+url: http://scaland.alanrodas.com
+
+api_url: /api/
+repository: https://github.com/alanrodas/scaland
+help_url: https://github.com/alanrodas/scaland
+
+collections:
+  docs:
+    output: true
