@@ -90,6 +90,13 @@ object properties {
     lazy val arch = System.getProperty("os.arch")
     /** Operating system version */
     lazy val version = System.getProperty("os.version")
+
+    lazy val isWindows = name.toLowerCase.contains("win")
+    lazy val isMac = name.toLowerCase.contains("mac")
+    lazy val isSolaris = name.toLowerCase.contains("sunos")
+    lazy val isUnix =
+      name.toLowerCase.contains("nix") || name.toLowerCase.contains("nux") || name.toLowerCase.contains("aix")
+
   }
   object path {
     /** Path separator (":" on UNIX) */

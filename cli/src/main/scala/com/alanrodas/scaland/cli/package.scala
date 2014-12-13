@@ -88,6 +88,17 @@ package object cli {
    */
   implicit def param2Boolean(arg : Parameter) : Boolean = arg.isDefined
 
+
+  /**
+   * Transform a Value to a Boolean
+   *
+   * This allows you to test for a value to see if it was defined by the user.
+   *
+   * @param value The value to test
+   * @return ''true'' is user defined, ''false'' otherwise.
+   */
+  implicit def value2Boolean(value : Value[_]) : Boolean = value.isDefined
+
   /**
    * This class provides an implicit conversion from a [[String]] to an [[Array]]
    * of strings.
@@ -141,7 +152,7 @@ package object cli {
   def dump(cmd : Command)(implicit commandManager : CommandManager) = {
     val longParamSign = commandManager.longParamSign
     val shortParamSign = commandManager.shortParamSign
-    Terminal.show("Called command: " + Console.BLUE + (if (cmd.name.isEmpty) "<root>" else cmd.name) + Console.RESET +
+    println("Called command: " + Console.BLUE + (if (cmd.name.isEmpty) "<root>" else cmd.name) + Console.RESET +
         // Display all values
         "\nValues are: ("+ Console.BLUE + cmd.numberOfValues + Console.RESET + ")\n" +
         (cmd match {
@@ -154,6 +165,7 @@ package object cli {
           }.mkString("\n")
           case c : MultipleValuesCommand =>
             Console.GREEN + c.values.mkString("\n") + Console.RESET
+          case c : NoValuesCommand => "Takes no values"
         }) +
         // Display all flags
         "\nFlags Are: (" + Console.BLUE + cmd.numberOfFlags + Console.RESET + ")\n" +

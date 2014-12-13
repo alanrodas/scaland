@@ -1,6 +1,6 @@
 organization := Scaland.organization
 
-name := Scaland.name("cli")
+name := Scaland.name("io-net")
 
 version := Scaland.version
 

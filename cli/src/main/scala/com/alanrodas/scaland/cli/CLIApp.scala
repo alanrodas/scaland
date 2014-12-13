@@ -107,6 +107,6 @@ trait CLIApp extends DelayedInit {
   implicit protected val commandManager = new CommandManager()
   /** Define the action to take in case the program was called with an invalid set of values. */
   protected val onIllegalCommandLineArgument = (e: IllegalCommandLineArgumentsException) => {
-    Terminal.error(e.getMessage)
+    println(e.getMessage)
   }
 }

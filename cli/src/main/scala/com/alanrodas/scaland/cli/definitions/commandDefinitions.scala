@@ -101,10 +101,10 @@ abstract class CommandDefinition(val name : String, val argumentDefinitions : It
         str.startsWith(commandManager.longParamSign)
       }
       def unParametrize(implicit commandManager : CommandManager) = {
-        if ( str.startsWith(commandManager.shortParamSign) )
-          str.replaceAll(commandManager.shortParamSign, "")
-        else if ( str.startsWith(commandManager.longParamSign) )
-          str.replaceAll(commandManager.longParamSign, "")
+        if ( str.startsWith(commandManager.longParamSign) )
+          str.drop(commandManager.longParamSign.length)
+        else if ( str.startsWith(commandManager.shortParamSign) )
+          str.drop(commandManager.shortParamSign.length)
         else str
       }
     }

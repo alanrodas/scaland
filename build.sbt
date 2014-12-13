@@ -1,12 +1,10 @@
-import GhPagesKeys.ghpagesNoJekyll
-
 organization := Scaland.organization
 
-name := Scaland.name()
+name := Scaland.name("parent")
 
 version := Scaland.version
 
-scalaVersion := Scaland.scalaVersion
+crossScalaVersions := Scaland.crossScalaVersions
 
 libraryDependencies ++= Scaland.dependencies
 
@@ -14,10 +12,24 @@ publishTo <<= version {Scaland.publishLocation}
 
 lazy val core = project
 
-lazy val cli = project.dependsOn(core)
+lazy val cli = project dependsOn core
 
-lazy val vcs = project.dependsOn(core)
+lazy val vcs = project dependsOn (core, io)
 
-//override def managedStyle = ManagedStyle.Maven
+    lazy val vcs_svn = project in file("vcs/svn") dependsOn vcs
 
-//lazy val publishTo = Resolve  .sftp("My Maven Repo", "maven.example.org", "/var/www/maven/html")
+    lazy val vcs_git = project in file("vcs/git") dependsOn vcs
+
+lazy val io = project dependsOn core
+
+    lazy val io_compressed = project in file("io/compressed") dependsOn io
+
+    lazy val io_fs = project in file("io/fs") dependsOn io
+
+    lazy val io_net = project in file("io/net") dependsOn io
+
+//libraryDependencies ++= Seq(
+//    "com.propensive" %% "rapture-io" % "0.10.0",
+//    "com.propensive" %% "rapture-net" % "0.10.0",
+//    "com.propensive" %% "rapture-fs" % "0.10.0"
+//)

@@ -1,6 +1,6 @@
 organization := Scaland.organization
 
-name := Scaland.name("cli")
+name := Scaland.name("io-fs")
 
 version := Scaland.version
 

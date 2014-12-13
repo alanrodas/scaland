@@ -14,8 +14,6 @@
 
 package com.alanrodas
 
-import scala.sys.process._
-
 package object scaland {
 
   implicit class OptionableMap[K,V](map : Map[K,V]) {

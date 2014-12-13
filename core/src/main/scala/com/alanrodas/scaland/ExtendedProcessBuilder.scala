@@ -14,7 +14,7 @@
 
 package com.alanrodas.scaland
 
-import scala.sys.process.{Process, ProcessBuilder, BasicIO, ProcessLogger}
+import scala.sys.process.{BasicIO, Process, ProcessLogger}
 
 class ExtendedProcessBuilder(val command : String, maybeCwd : Option[String] = None) {
 

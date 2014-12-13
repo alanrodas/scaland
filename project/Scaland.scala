@@ -19,7 +19,9 @@ object Scaland {
   val organization = "com.alanrodas"
   val version = "0.1"
   val scalaVersion = "2.11.4"
-  def name(name : String = "") = "scaland" + (if (name.isEmpty) "" else "-" + name)
+  val crossScalaVersions = Seq("2.10.4", "2.11.4")
+  def name = "scaland"
+  def name(name : String) = "scaland-" + name
   def dependencies = Seq(
     "org.scalatest" %% "scalatest" % "2.2.1" % "test"
   )
@@ -33,4 +35,5 @@ object Scaland {
     if (v.trim.endsWith("SNAPSHOT")) {getFileResolver("snapshots")}
     else {getFileResolver("releases")}
   }
+
 }

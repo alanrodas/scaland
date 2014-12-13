@@ -1,10 +1,10 @@
 organization := Scaland.organization
 
-name := Scaland.name("core")
+name := Scaland.name
 
 version := Scaland.version
 
-scalaVersion := Scaland.scalaVersion
+crossScalaVersions := Scaland.crossScalaVersions
 
 libraryDependencies ++= Scaland.dependencies
 

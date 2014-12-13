@@ -13,7 +13,7 @@
  */
 
 package com.alanrodas.scaland.cli
-
+/*
 import scala.annotation._
 
 /**
@@ -144,7 +144,7 @@ class Terminal(private val levels : TerminalLevel) {
   def error(message : Any, continued : Boolean = false)(implicit style : TerminalStyle) =
     doLevel(errorActive, continued, style.errorStyle _ , message)
 
-  def read(msg : String = "") = scala.io.StdIn.readLine(msg)
+  def read(msg : String = "") = ??? // scala.io.StdIn.readLine(msg)
 }
 
 /**
@@ -177,3 +177,43 @@ object Terminal {
   def read(msg : String = "")(implicit level : TerminalLevel = defaultLevel) =
     apply(level).read(msg)
 }
+
+object Ansi {
+  val Esc = 27.toChar
+  object style {
+    val Normal = Esc+"[0m"
+    val Bold = Esc+"[1m"
+    val Underline = Esc+"[4m"
+    val Blink = Esc+"[5m"
+    val Reverse = Esc+"[7m"
+    val Nondisplayed = Esc+"[8m"
+  }
+  object color {
+    val Black = Esc+"[30m"
+    val Red = Esc+"[31m"
+    val Green = Esc+"[32m"
+    val Yellow = Esc+"[33m"
+    val Blue = Esc+"[34m"
+    val Magenta = Esc+"[35m"
+    val Cyan = Esc+"[36m"
+    val White = Esc+"[37m"
+  }
+  val bg = background
+  object background {
+    val Black = Esc+"[30m"
+    val Red = Esc+"[31m"
+    val Green = Esc+"[32m"
+    val Yellow = Esc+"[33m"
+    val Blue = Esc+"[34m"
+    val Magenta = Esc+"[35m"
+    val Cyan = Esc+"[36m"
+    val White = Esc+"[37m"
+  }
+
+  def cursor(row : Int, col : Int) = Esc+"["+row+";"+col+"H"
+  def up(n : Int) = Esc+"["+n+"A"
+  def down(n : Int) = Esc+"["+n+"B"
+  def right(n : Int) = Esc+"["+n+"C"
+  def left(n : Int) = Esc+"["+n+"D"
+}
+*/
