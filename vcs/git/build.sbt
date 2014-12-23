@@ -4,6 +4,8 @@ name := Scaland.name("vcs-git")
 
 version := Scaland.version
 
+scalaVersion := Scaland.scalaVersion
+
 crossScalaVersions := Scaland.crossScalaVersions
 
 libraryDependencies ++= Scaland.dependencies

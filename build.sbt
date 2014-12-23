@@ -4,6 +4,8 @@ name := Scaland.name("parent")
 
 version := Scaland.version
 
+scalaVersion := Scaland.scalaVersion
+
 crossScalaVersions := Scaland.crossScalaVersions
 
 libraryDependencies ++= Scaland.dependencies
@@ -11,6 +13,8 @@ libraryDependencies ++= Scaland.dependencies
 publishTo <<= version {Scaland.publishLocation}
 
 lazy val core = project
+
+lazy val logging = project
 
 lazy val cli = project dependsOn core
 

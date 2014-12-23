@@ -17,7 +17,7 @@ import sbt._
 
 object Scaland {
   val organization = "com.alanrodas"
-  val version = "0.1"
+  val version = "0.2"
   val scalaVersion = "2.11.4"
   val crossScalaVersions = Seq("2.10.4", "2.11.4")
   def name = "scaland"
